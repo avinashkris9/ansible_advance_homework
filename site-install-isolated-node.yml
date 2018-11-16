@@ -17,12 +17,12 @@
       path: "{{tower_inventory_file}}"
       insertafter: 
       block: |
-           "[osp]
+           [osp]
 
             workstation-{{OSP_GUID}}.rhpds.opentlc.com
 
             [isolated_group_osp:vars]
-            controller=tower"
+            controller=tower
 
 
 
