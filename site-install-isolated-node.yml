@@ -1,6 +1,32 @@
+---
 - hosts: localhost
   gather_facts: false
+  vars:
+    tower_inventory_fle: "/root/ansible-tower-setup-latest/inventory"
+    tower_home: "/root/ansible-tower-setup-latest"
+    work_station_user: "cloud_user"
+    
+    
   tasks:
+  - name: Fail the play if GUID is not provided
+    fail:
+      msg: "Please provide the GUID OSP_GUID"
+    when: OSP_GUID ==""
   - name: Append inventory file
+    blockinfile:
+      path: "{{tower_inventory_file}}"
+      insertafter: 
+      block: |
+           "[osp]
+
+            workstation-{{OSP_GUID}}.rhpds.opentlc.com
+
+            [isolated_group_osp:vars]
+            controller=tower"
+
+
 
   - name: Run Ansible Tower setup
+    command: "{{tower_home}}/setup.sh"
+
+    ...
