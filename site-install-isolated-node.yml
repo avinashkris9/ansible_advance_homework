@@ -2,7 +2,7 @@
 - hosts: localhost
   gather_facts: false
   vars:
-    tower_inventory_fle: "/root/ansible-tower-setup-latest/inventory"
+    tower_inventory_file: "/root/ansible-tower-setup-latest/inventory"
     tower_home: "/root/ansible-tower-setup-latest"
     work_station_user: "cloud_user"
     
@@ -29,4 +29,3 @@
   - name: Run Ansible Tower setup
     command: "{{tower_home}}/setup.sh"
 
-    ...
