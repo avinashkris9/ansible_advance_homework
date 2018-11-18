@@ -1,1 +1,3 @@
-payload: haproxy
+---
+# vars file for load_balancer
+package_name: haproxy
