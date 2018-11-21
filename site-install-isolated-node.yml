@@ -26,9 +26,9 @@
 
 
 
-  #- name: Run Ansible Tower setup
-  #  shell: "{{tower_home}}/setup.sh"
-  #  async: 3600
-  #  poll: 36
+  - name: Run Ansible Tower setup
+    shell: "{{tower_home}}/setup.sh"
+    async: 3600
+    poll: 36
 
 
