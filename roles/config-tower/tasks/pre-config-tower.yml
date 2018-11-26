@@ -13,6 +13,10 @@
     src: "{{path_to_opentlc_key}}"
     dest: /root/secret.pem
 
+- name: Copy variable file
+  copy:
+    src: "../vars/main.yml"
+    dest: /tmp/variable.yml
 
 - name: Copy inventory vars
   copy:
